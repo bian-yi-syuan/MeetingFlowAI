@@ -103,20 +103,42 @@ Apple Speech Framework を利用し、録音中の音声をリアルタイムで
 ---
 
 ## 画面イメージ
+## 画面イメージ
 
 MeetingFlowAI では、会議開始から録音、リアルタイム文字起こし、AI要約、ToDo管理、カレンダー登録、メール共有、会議分析までを一つの流れで扱えるように設計しています。
 
-| ホーム | リアルタイム文字起こし | 文字起こし |
-|---|---|---|
-| ![Home](Screenshots/home.png) | ![Live Transcription](Screenshots/live_transcription.png) | ![Transcript](Screenshots/transcript.png) |
-
-| AI要約 | カレンダー | ToDo管理 |
-|---|---|---|
-| ![Summary](Screenshots/summary.png) | ![Calendar](Screenshots/calendar.png) | ![ToDo Tracking](Screenshots/todo_tracking.png) |
-
-| メール草稿 | 会議一覧 | 分析 |
-|---|---|---|
-| ![Mail Draft](Screenshots/mail_draft.png) | ![Meeting List](Screenshots/meeting_list.png) | ![Analytics](Screenshots/analytics.png) |
+<table>
+  <tr>
+    <td align="center"><strong>ホーム</strong></td>
+    <td align="center"><strong>リアルタイム文字起こし</strong></td>
+    <td align="center"><strong>文字起こし</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Screenshots/home.png" width="220"></td>
+    <td align="center"><img src="Screenshots/live_transcription.png" width="220"></td>
+    <td align="center"><img src="Screenshots/transcript.png" width="220"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>AI要約</strong></td>
+    <td align="center"><strong>カレンダー</strong></td>
+    <td align="center"><strong>ToDo管理</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Screenshots/summary.png" width="220"></td>
+    <td align="center"><img src="Screenshots/calendar.png" width="220"></td>
+    <td align="center"><img src="Screenshots/todo_tracking.png" width="220"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>メール草稿</strong></td>
+    <td align="center"><strong>会議一覧</strong></td>
+    <td align="center"><strong>分析</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Screenshots/mail_draft.png" width="220"></td>
+    <td align="center"><img src="Screenshots/meeting_list.png" width="220"></td>
+    <td align="center"><img src="Screenshots/analytics.png" width="220"></td>
+  </tr>
+</table>
 
 ---
 

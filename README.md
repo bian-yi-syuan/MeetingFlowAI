@@ -72,7 +72,7 @@ Apple Speech Framework を利用し、録音中の音声をリアルタイムで
 - 次回アクション
 - 重要キーワード
 
-現在のバージョンでは、外部AI APIに依存しないローカル処理を中心に設計しています。  
+現在のバージョンでは、`RuleBasedWorkflowService` による local rule-based workflow MVP として端末内で要約とToDo抽出を行います。クラウドLLMを利用した生成AIではありません。  
 将来的には、自前のバックエンドを経由してAI APIと連携し、より高精度な要約機能へ拡張できる構成を想定しています。
 
 ### ToDo管理
@@ -225,6 +225,8 @@ ToDo抽出
 
 ## セキュリティ方針
 
+現在のバージョンでは外部AI APIを使用していません。オンライン文字起こしではApple Speech Frameworkを利用し、要約・ToDo抽出・メール草稿は端末内のルールベース処理で生成します。  
+
 本アプリでは、APIキーを iOS アプリ内に直接保存しない設計を前提としています。
 
 外部AI APIと連携する場合は、以下の構成を想定しています。
@@ -254,6 +256,16 @@ AI API
 - バックエンド経由でのAI API連携
 - UI/UXのさらなる改善
 - 多言語対応の拡張
+- LocalAuthenticationを利用したFace ID / Touch ID対応のApp Lock
+- 機密性の高い端末内データに対する追加暗号化
+- Keychainを利用した暗号鍵管理
+
+---
+
+## CI / Unit Tests
+
+GitHub Actionsでは、`main` へのpushとpull request時に、`MeetingFlowAI` SchemeのBuildとUnit Testsを実行します。  
+現在のUnit Testsは、ローカル要約、ToDo抽出、メール草稿、入力検証、ファイルパス検証などを対象にしています。
 
 ---
 
@@ -279,3 +291,4 @@ Bian Yi Syuan
 Mobile & Web Application Developer
 
 GitHub: [bian-yi-syuan](https://github.com/bian-yi-syuan)
+

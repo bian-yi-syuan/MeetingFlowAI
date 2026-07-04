@@ -134,7 +134,7 @@ struct EmailDraftView: View {
     private func prepareDraft() {
         importParticipantEmails()
         if meeting.emailSubject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            meeting.emailSubject = "本日の(meeting.title)内容のご共有"
+            meeting.emailSubject = "本日の\(meeting.title)内容のご共有"
         }
         if meeting.emailBody.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || meeting.emailBody.contains("□") {
             meeting.emailBody = viewModel.emailBody(for: meeting)

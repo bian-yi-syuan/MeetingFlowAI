@@ -1,30 +1,26 @@
-# macOS
-.DS_Store
-
-# Xcode user data
-*.xcuserstate
-*.xcworkspace/xcuserdata/
-*.xcodeproj/xcuserdata/
-xcuserdata/
-
-# Build
-build/
-Build/
+# Xcode
 DerivedData/
-*.ipa
-*.dSYM
-*.dSYM.zip
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
 
-# Swift Package Manager
-.swiftpm/
+# Build outputs
 .build/
+build/
+work/
+outputs/*.zip
 
-# Secrets
+# Secrets — never commit credentials
 .env
-*.env
+.env.*
+*.xcconfig
+!Config/Example.xcconfig
 Secrets.plist
 GoogleService-Info.plist
-*.mobileprovision
+*.p8
 *.p12
-*.cer
-*.key
+*.mobileprovision
+
+# macOS
+.DS_Store

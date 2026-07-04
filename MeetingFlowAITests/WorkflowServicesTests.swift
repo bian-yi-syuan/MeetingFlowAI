@@ -53,6 +53,28 @@ final class WorkflowServicesTests: XCTestCase {
         XCTAssertFalse(body.contains("□"))
     }
 
+    func testEmailWithoutParticipantsOrTodosUsesSafeFallbacks() {
+        let meeting = Meeting(title: "参加者確認会議")
+
+        let body = service.makeEmail(for: meeting)
+
+        XCTAssertTrue(body.contains("参加者：参加者未設定"))
+        XCTAssertTrue(body.contains("・登録されたToDoはありません。"))
+    }
+
+    func testJapaneseTextIsPreservedInEmailBody() {
+        let meeting = Meeting(title: "新商品企画会議")
+        meeting.decisions = "・七月十五日にデザイン案を確定する"
+        meeting.nextActions = "・大森さんが資料を準備する"
+
+        let body = service.makeEmail(for: meeting)
+
+        XCTAssertTrue(body.contains("新商品企画会議"))
+        XCTAssertTrue(body.contains("七月十五日にデザイン案を確定する"))
+        XCTAssertTrue(body.contains("大森さんが資料を準備する"))
+        XCTAssertFalse(body.contains("�"))
+    }
+
     func testAudioFileServiceRejectsPathTraversal() {
         XCTAssertThrowsError(try LocalAudioFileService().url(for: "../secret.m4a"))
     }
